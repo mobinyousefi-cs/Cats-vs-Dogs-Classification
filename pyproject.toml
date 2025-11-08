@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cats-vs-dogs-classifier"
+version = "0.1.0"
+description = "Cats vs Dogs image classification with a Keras CNN (clean src layout)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Mobin Yousefi", email = "mobinyousefi.cs@gmail.com" }
+]
+keywords = ["deep learning", "keras", "tensorflow", "computer vision", "cats", "dogs"]
+
+dependencies = [
+  "tensorflow>=2.13.0",
+  "numpy>=1.24.0",
+  "pandas>=2.0.0",
+  "scikit-learn>=1.3.0",
+  "matplotlib>=3.7.0",
+  "Pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.0.0",
+  "ruff>=0.5.0",
+  "pytest>=8.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mobinyousefi-cs"
+Source = "https://github.com/mobinyousefi-cs/cats-vs-dogs-classifier"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "I", "B"]
+ignore = []
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
